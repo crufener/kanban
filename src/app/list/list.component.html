@@ -1,0 +1,15 @@
+<div>
+    <p><strong>{{list.name}}</strong></p>
+    <ul class="list-group">
+        <li *ngFor="let card of list.cards" class="list-group-item" (cardDeleted)="delete()">
+            <div class="card-info">
+                <a routerLink="/detail/{{card.id}}"><span class="badge">{{card.id}}</span> {{card.name}}</a>
+                <button class="btn btn-outline-danger btn-xs" title="delete" (click)="delete(card)">x</button>
+            </div>
+        </li>
+    </ul>
+ 
+    <input #addCardInput type="text" (keyup.enter)="add({name: addCardInput.value, list: list.id}); addCardInput.value=''; displayAddCard=false;" *ngIf="displayAddCard" autofocus>
+    <button (click)="displayAddCard=true">Add a card...</button>
+    <button (click)="log(cardStore)">LOG</button>
+</div>

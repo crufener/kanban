@@ -1,0 +1,28 @@
+<div *ngIf="card">
+
+  <h2>{{card.name}} details</h2>
+  <div><span>id: </span>{{card.id}}</div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="card.name" placeholder="name">
+    </label>
+  </div>
+
+  <div *ngIf="editDescription; else elseBlock">
+    <label for="description">description:</label>
+    <br>
+      <textarea [(ngModel)]="card.description" id="description">{{card.description}}</textarea>
+  </div>
+  <ng-template #elseBlock>
+    <div>
+      Description
+      <div class="description">
+        {{card.description}}
+      </div>
+    </div>
+  </ng-template>
+  <button (click)="save()" class="btn btn-outline-info">Save</button>
+
+</div>
+<button (click)="goBack()" class="btn btn-outline-dark">go back</button>

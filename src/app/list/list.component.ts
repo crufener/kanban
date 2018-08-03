@@ -13,6 +13,8 @@ export class ListComponent implements OnInit {
   @Input() list: ListSchema;
   @Input() listID: number;
   @Input() cardStore: CardSchema[];
+  @Input() bgColor: string;
+  @Input() lists: ListSchema[];
   @Output() listUpdated = new EventEmitter();
   @Output() card = new EventEmitter<CardSchema>();
 
@@ -50,10 +52,13 @@ export class ListComponent implements OnInit {
   }
 
   delete(card: CardSchema): void {
-    this.cardService.deleteCard(card).subscribe((c) => {
-      console.log('A card was deleted LIST COMPONENT: ', c);
-      this.listUpdated.emit();
-    });
+    const ok = confirm(`Delete project ${card.name}`);
+    if (ok) {
+      this.cardService.deleteCard(card).subscribe((c) => {
+        console.log('A card was deleted LIST COMPONENT: ', c);
+        this.listUpdated.emit();
+      });
+    } else { return; }
   }
 
 }

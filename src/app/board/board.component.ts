@@ -29,17 +29,20 @@ export class BoardComponent implements OnInit {
       this.lists = [
         {
           id: 1,
-          name: 'To Do',
+          name: 'Column One',
+          bgColor: 'blue',
           cards: cards['data'].filter(c => c.list === 1)
         },
         {
           id: 2,
-          name: 'Doing',
+          name: 'Column Two',
+          bgColor: 'red',
           cards: cards['data'].filter(c => c.list === 2)
         },
         {
           id: 3,
-          name: 'Done',
+          name: 'Column Three',
+          bgColor: 'green',
           cards: cards['data'].filter(c => c.list === 3)
         }
       ];

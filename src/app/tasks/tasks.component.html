@@ -1,0 +1,8 @@
+<div>
+  <span [class.done]="isDone">
+
+    <input [(ngModel)]="isDone" type="checkbox" name="task" id="task" [checked]="isDone">
+    <span>- {{task.name}}</span>
+
+  </span>
+</div>

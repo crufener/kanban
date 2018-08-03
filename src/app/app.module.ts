@@ -10,13 +10,15 @@ import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { CardDetailComponent } from './card-detail/card-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
     ListComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,

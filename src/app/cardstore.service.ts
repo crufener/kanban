@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CardSchema } from './cardschema';
+import { ListSchema } from './listschema';
 import { ThrowStmt } from '../../node_modules/@angular/compiler';
 
 const httpOptions = {
@@ -15,6 +16,13 @@ const httpOptions = {
 export class CardService {
 
   private cardsUrl = 'api/cards'; // URL to web api
+  private listUrl = 'api/lists';
+  private list = new BehaviorSubject([
+    {id: 1, name: 'First Column'},
+    {id: 2, name: 'Second Column'},
+    {id: 3, name: 'Third Column'}
+  ]);
+  currentList = this.list.asObservable();
 
   constructor(
     private http: HttpClient,

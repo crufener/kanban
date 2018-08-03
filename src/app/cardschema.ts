@@ -3,4 +3,5 @@ export class CardSchema {
     name: string;
     description: string;
     list: number;
+    tasks: {id: number, name: string, done: boolean}[];
 }

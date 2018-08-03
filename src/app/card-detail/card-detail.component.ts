@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { fromEvent, Observable, interval } from 'rxjs';
 
 import { CardService } from '../cardstore.service';
 import { CardSchema } from '../cardschema';
@@ -28,6 +29,8 @@ export class CardDetailComponent implements OnInit {
   ngOnInit() {
     this.getCard();
     this.cardService.currentList.subscribe(list => this.allLists = list);
+    const secondsCounter = interval(1000);
+    secondsCounter.subscribe(x => console.log(`It has been [${x}] seconds!`));
   }
 
   getCard(): void {

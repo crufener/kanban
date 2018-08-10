@@ -3,8 +3,6 @@ import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CardSchema } from './cardschema';
-import { ListSchema } from './listschema';
-import { ThrowStmt } from '../../node_modules/@angular/compiler';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

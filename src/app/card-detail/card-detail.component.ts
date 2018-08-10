@@ -19,6 +19,17 @@ export class CardDetailComponent implements OnInit {
   lists: ListSchema[];
   allLists;
   selectedList;
+  allColors: string[] = [
+    'red',
+    'orange',
+    'blue',
+    'green',
+    'yellow',
+    'darkviolet',
+    'darkred',
+    'cyan',
+    'purple'
+  ];
 
   constructor(
     private route: ActivatedRoute,
@@ -29,8 +40,6 @@ export class CardDetailComponent implements OnInit {
   ngOnInit() {
     this.getCard();
     this.cardService.currentList.subscribe(list => this.allLists = list);
-    const secondsCounter = interval(1000);
-    secondsCounter.subscribe(x => console.log(`It has been [${x}] seconds!`));
   }
 
   getCard(): void {
@@ -62,7 +71,6 @@ export class CardDetailComponent implements OnInit {
       this.card.tasks = [];
     }
     let id = this.card.tasks.length;
-    console.log(`The length is ${id}`);
     task.id = ++id;
     task.done = false;
     this.card.tasks.push(task);

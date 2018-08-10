@@ -1,0 +1,28 @@
+.detail-link {
+    text-decoration: none;
+    color: black;
+}
+
+.link-text {
+    margin-left: 20px;
+    font-size: small;
+    word-wrap: break-word;
+    width: 200px;
+}
+
+.list {
+    overflow: hidden;
+}
+
+.label {
+    position: absolute;
+    top: -5px;
+    left: -20px;
+    width: 25px;
+    height: 70px;
+    transition: all 100ms ease-out;
+}
+
+.list:hover .label {
+    left: -5px;
+}

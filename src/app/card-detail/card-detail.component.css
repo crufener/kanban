@@ -1,3 +1,19 @@
 .done {
     text-decoration: line-through;
 }
+
+.header {
+    overflow: hidden;
+}
+
+.label-box {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.card-container {
+    margin-left: 20px;
+}

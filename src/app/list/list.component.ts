@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
   @Output() card = new EventEmitter<CardSchema>();
 
   displayAddCard = false;
+  labelColor;
 
   constructor(private cardService: CardService) { }
 

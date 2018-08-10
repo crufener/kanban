@@ -6,7 +6,7 @@
 
         <div class="input-group-append">
             <button 
-                (click)="add({name: addCardInput.value, list: list.id}); addCardInput.value='';"
+                (click)="add({name: addCardInput.value, list: list.id, label: '#F5C24F'}); addCardInput.value='';"
                 class="btn btn-outline-secondary">
                 add
             </button>
@@ -14,12 +14,12 @@
 
     </div>
     <ul class="list-group">
-        <li *ngFor="let card of list.cards" class="list-group-item p-1 m-1 rounded" [style.border-color]="bgColor">
+        <li *ngFor="let card of list.cards" class="list-group-item p-1 m-1 rounded list shadow-sm">
             <div class="d-flex justify-content-between">
                 <a 
-                    class="flex-grow-1 align-self-stretch" 
+                    class="flex-grow-1 align-self-stretch detail-link" 
                     routerLink="/detail/{{card.id}}">
-                    {{card.name}}
+                    <div class="link-text">{{card.name}}</div>
                 </a>
                 <button 
                     class="btn btn-outline-danger btn-xs" 
@@ -27,6 +27,8 @@
                     (click)="delete(card)">
                     x
                 </button>
+                <div class="label" [style.background-color]="card.label">
+                </div>
             </div>
         </li>
     </ul>

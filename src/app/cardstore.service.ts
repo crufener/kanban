@@ -16,7 +16,6 @@ const httpOptions = {
 export class CardService {
 
   private cardsUrl = 'api/cards'; // URL to web api
-  private listUrl = 'api/lists';
   private list = new BehaviorSubject([
     {id: 1, name: 'First Column'},
     {id: 2, name: 'Second Column'},

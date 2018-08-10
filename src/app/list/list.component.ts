@@ -23,10 +23,6 @@ export class ListComponent implements OnInit {
 
   constructor(private cardService: CardService) { }
 
-  toggleDisplayAddCard() {
-    this.displayAddCard = !this.displayAddCard;
-  }
-
   ngOnInit() {
   }
 
